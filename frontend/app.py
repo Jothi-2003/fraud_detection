@@ -5,7 +5,7 @@ st.title("🏥 Health Insurance Fraud Detection")
 
 # Input fields
 claim_amount = st.number_input("Claim Amount")
-patient_age = st.number_input("Patient Age", 1, 100)
+patient_age = st.number_input("Patient Age", 0, 100)
 length_of_stay_days = st.number_input("Length of Stay (Days)", 0, 60)
 number_of_procedures = st.number_input("Number of Procedures", 0, 20)
 deductible_amount = st.number_input("Deductible Amount")
