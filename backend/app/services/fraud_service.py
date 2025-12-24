@@ -4,6 +4,15 @@ from backend.app.core.model_loader import load_fraud_model
 model = load_fraud_model()
 
 def predict_fraud(data):
+     # Rule-based override
+
+    if data.patient_age == 0:
+        return 1.0, "Fraud"
+    if data.claim_submitted_late == 1 and data.previous_claims_provider > 30:
+        return 0.9, "Fraud"
+    if data.provider_patient_distance_miles > 150 and data.claim_amount > 80000:
+        return 0.92, "Fraud"
+
     features = np.array([[
         data.claim_amount,
         data.patient_age,
