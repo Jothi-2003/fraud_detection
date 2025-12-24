@@ -22,4 +22,3 @@ class FraudPrediction(Base):
     fraud_probability = Column(Float)
     fraud_prediction = Column(String)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
-
